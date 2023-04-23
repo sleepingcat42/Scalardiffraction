@@ -23,7 +23,7 @@ $$
 
 
 $\lambda$ 表示波长，$k=2\pi$ $(x, y)$ 和 $(\xi, \eta)$ 分别是入射屏面和观察平面的 坐标，$U_1$ 和 $U_2$ 分别是入射面和出射面的复振幅分布。
-$\Sigma$ 为衍射孔径， $z$ 是两个平面的距离，$ r_{12}=\sqrt{z^2+(x-\xi)^2+(y-\eta)^2} $。
+$\Sigma$ 为衍射孔径， $z$ 是两个平面的距离，$ r_{12}=\sqrt{z^2+(x-\xi)^2+(y-\eta)^2} $ 。
 
 ![Alt text](fig/fig1.png)
 
@@ -44,7 +44,7 @@ h(x, y)=\frac{z}{j \lambda} \frac{\exp (j k r)}{r^2}
 $$
 
 
-为 R-S 积分的冲击响应（impulse response）
+为 R-S 积分的冲激响应（impulse response）
 
 可以证明 R-S 积分传递函数（transfer function）的函数为
 $$
@@ -68,29 +68,38 @@ $\mathfrak{F}$ 和 $\mathfrak{F}^{-1}$ 为傅里叶变换和逆傅里叶变换�
 
 ### 瑞利-索末菲衍射的条件
 #### 冲激响应的采样条件
-假设对光场的离散采样如下图所示，$X$, $Y$ 的长度分别是 $L_X$,  $L_Y$，范围为$\left[ -\frac{1}{2}L_X, \frac{1}{2}L_X\right]$  $\left[ -\frac{1}{2}L_Y, \frac{1}{2}L_Y\right]$，采样间隔为$\Delta x$ 和 $\Delta y$，采样数 $N_x = \frac{L_X}{\Delta x}$，$N_y = \frac{L_y}{\Delta y}$。后续的讨论遵循这里的采样设置。
+假设对光场的离散采样如下图所示，$X$, $Y$ 的长度分别是 $L_X$,  $L_Y$，范围为 $\left[ -\frac{1}{2}L_X, \frac{1}{2}L_X\right]$   $\left[ -\frac{1}{2}L_Y, \frac{1}{2}L_Y\right]$，采样间隔为 $\Delta x$ 和 $\Delta y$，采样数  $ N_x = \frac{L_X}{\Delta x}$，$N_y = \frac{L_y}{\Delta y}$。后续的讨论遵循这里的采样设置。
 
 ![Alt text](fig/fig2.png)
 
-为了简化讨论，考虑一维的情形，对于 
-$$h(x)=\frac{z}{j \lambda} \frac{\exp (j k r)}{r^2} = \frac{z}{j \lambda} \frac{\exp (j \phi_h(x))}{r^2}  $$
+为了简化讨论，考虑一维的情形，对于
+
+$$
+h(x)=\frac{z}{j \lambda} \frac{\exp (j k r)}{r^2} = \frac{z}{j \lambda} \frac{\exp (j \phi_h(x))}{r^2}  
+$$
+
 其中
 $$
 \phi_h = k \sqrt{z^2+x^2}
 $$
+
 其局域空间频率应小于奈奎斯特采样频率
 $$ 
 \left| \frac{1}{2 \pi} \frac{\partial \phi_h}{\partial x}  \right|_{max} \leq \frac{1}{2 \Delta x}
 $$
+
 即
 $$
 \left| \frac{x}{\lambda\sqrt{z^2 + x^2}}\right|_{max} \leq \frac{1}{2 \Delta x}
 $$
+
 整理得到
+
 $$
 z \geq \frac{ 2x_{max}\Delta x}{\lambda} \sqrt{1- \left(\frac{\lambda}{2\Delta x}\right)^2} 
 $$
-$x$ 的最大值为 $x_{max} = \frac{L}{2}$，且$L_X = N_x \Delta x$ 上式可以改为
+
+$x$ 的最大值为 $x_{max} = \frac{L}{2}$，且 $L_X = N_x \Delta x$ 上式可以改为
 $$
 z \geq \frac{ L_X \Delta x}{\lambda} \sqrt{1- \left(\frac{\lambda}{2\Delta x}\right)^2} = \frac{ N_x \Delta x^2}{\lambda} \sqrt{1- \left(\frac{\lambda}{2\Delta x}\right)^2}
 $$
@@ -151,14 +160,17 @@ $$
 $$
 
 传播距离 $z$ 应满足
+
 $$
 z \geq \frac{ L_X \Delta x}{\lambda}
 $$
 
 对于传递函数 H
+
 $$
 \Delta x \geq \frac{\lambda z}{ L}
 $$
+
 
 $$
 z \leq \frac{ L_X \Delta x}{\lambda}
