@@ -16,9 +16,12 @@
 * 其他（未来补充）
 
 本文的重点并不在标量衍射的推导，所以跳过麦克斯韦方程组，和参考文献[<a href="#ref2">2</a>] 类似，直接到跳到第一类瑞利-索末菲积分
+
 $$
 U_2(x, y)=\frac{1}{j \lambda} \iint_{\Sigma} U_1(\xi, \eta) \frac{z}{r_{12}} \frac{\exp \left(j k r_{12}\right)}{r_{12}} d \xi d \eta
 $$
+
+
 $\lambda$ 表示波长，$k=2\pi$ $(x, y)$ 和 $(\xi, \eta)$ 分别是入射屏面和观察平面的 坐标，$U_1$ 和 $U_2$ 分别是入射面和出射面的复振幅分布。
 $\Sigma$ 为衍射孔径， $z$ 是两个平面的距离，$ r_{12}=\sqrt{z^2+(x-\xi)^2+(y-\eta)^2} $。
 
@@ -29,13 +32,18 @@ $\Sigma$ 为衍射孔径， $z$ 是两个平面的距离，$ r_{12}=\sqrt{z^2+(x
 
 ## 瑞利-索末菲/角谱衍射
 积分公式可以改写成卷积的形式
+
 $$
 U_2(x, y)=\iint U_1(\xi, \eta) h(x-\xi, y-\eta) d \xi d \eta,
 $$
+
 其中 
+
 $$
 h(x, y)=\frac{z}{j \lambda} \frac{\exp (j k r)}{r^2}
 $$
+
+
 为 R-S 积分的冲击响应（impulse response）
 
 可以证明 R-S 积分传递函数（transfer function）的函数为
@@ -45,13 +53,17 @@ $$
 $f_X$, $f_Y$ 分别是$X$， $Y$方向的空间频率。这个函数即熟知的角谱（Angular Spectrum）传递函数。显然， $h(x, y)$ 和 $H(f_X, f_Y)$ 是傅里叶变换对。不过，两者之间的关系证明没有那么明显，证明过程可以参考[<a href="#ref2">3</a>]。
 
 这样，就有两种方法去计算：第一种是基于冲击响应的卷积方法
+
 $$
-U_2(x, y)=\mathfrak{I}^{-1}\left\{\mathfrak{I}\left\{U_1(x, y)\right\} \mathfrak{F}\{h(x, y)\}\right\}
+U_2(x, y)=\mathfrak{F}^{-1}\left\{\mathfrak{I}\left\{U_1(x, y)\right\} \mathfrak{F}\{h(x, y)\}\right\}
 $$
+
 另一种是基于传递函数的方法
+
 $$
 U_2(x, y)=\mathfrak{F}^{-1}\left\{\mathfrak{F}\left\{U_1(x, y)\right\} H\left(f_X, f_Y\right)\right\}
 $$
+
 $\mathfrak{F}$ 和 $\mathfrak{F}^{-1}$ 为傅里叶变换和逆傅里叶变换。这两种方法在数学上是等价的，但实际计算中，对光场进行离散采样，采样的频率是有限的，应用 FFT 计算的时候就会遇到问题。
 
 ### 瑞利-索末菲衍射的条件
