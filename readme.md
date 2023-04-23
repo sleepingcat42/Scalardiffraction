@@ -1,6 +1,6 @@
 # 标量衍射计算不完全指南（python 实现）
 ## Introduction
-本文的目的总结一些标量衍射的计算方法，并讨论讨论他们的适用条件。代码和例子在：github.com/sleepingcat
+本文的目的总结一些标量衍射的计算方法，并讨论讨论他们的适用条件。代码和例子在：https://github.com/sleepingcat42/Scalardiffraction
 
 需要的预备知识：涉及的数理知识并不高深，主要是线性系统和傅里叶变换（离散傅里叶变换）的基础知识，当然还有光学。
 
