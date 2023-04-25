@@ -21,8 +21,9 @@ def propagation_tf(u1, L, wavelen, z, kernel = 'AS'):
         H = np.exp(-1j * np.pi * wavelen * z *(FX**2+FY**2) )
     else:
         temp = 1 - ((wavelen *FX)**2 + (wavelen *FY)**2)
-        temp[temp<0]=0
+        temp[temp<0] = 0
         H = np.exp(1j * k * z * np.sqrt(temp))
+        H[temp<0] = 0
 
     H=fftshift(H)
     U1 = fft2(fftshift(u1))

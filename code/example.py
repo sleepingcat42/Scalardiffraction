@@ -28,6 +28,7 @@ z = [1000,2000,4000,20000]
 print(' zc = ',str(L*dx/wavelen), 'mm')
 
 propagationfunc = lambda kernel, method, z: propagation_tf(u1, L, wavelen,z,kernel) if method =='TF' else propagation_ir(u1, L, wavelen,z,kernel)  
+
 plt.figure(figsize=(8, 8), dpi=300)
 figindx = 1
 for i in range(len(z)):
@@ -43,7 +44,7 @@ for i in range(len(z)):
             plt.xticks([])
             plt.yticks([])
             figindx = figindx+1
-            
+plt.show()
         
 
 
